@@ -8,21 +8,30 @@
     <title>Stoter Sound System</title>
 </head>
 <body>
-    <div class="border container-fluid"> <!-- pannel -->
-        <div> <!-- player -->
+    <div class="border container-fluid w-100 "> <!-- pannel -->
+        <div class="border w-25"> <!-- player -->
             <div class="border row">
                 <a>titlebox</a>
             </div>
-            <div> <!-- volume slider -->
-
-            </div> <!-- play/pauze/loop/random -->
-            <div class="border row">
-                <div class="border col-2"></div>
-                <div class="border col-2"></div>
-                <div class="border col-2"></div>
-                <div class="border col-5"></div>
+            <div class="border row"> <!-- volume slider -->
+                <a>volume slider</a>
             </div>
-
+            <div class="border row"> <!-- play/pauze/loop/random -->
+                <button type="button" class="w-25 btn-secondary">play</button>
+                <button type="button" class="w-25 btn-secondary">pauze</button>
+                <button type="button" class="w-25 btn-secondary">loop</button>
+                <button type="button" class="w-25 btn-secondary">random</button>
+            </div>
+            <div class="border row"> <!-- pitch progress -->
+                <button type="button" class="w-25 btn-secondary"> pitch</button>
+                <div class="border w-75">progression bar</div>
+            </div>
+            <div> <!-- music selection box -->
+                <ul>
+                    <li>kaas</li>
+                    <li>brood</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
