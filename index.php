@@ -11,15 +11,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
             crossorigin="anonymous"></script>
+    <script src="Main.js"></script>
     <title>Stoter Sound System</title>
 </head>
 <body>
+
 <div class="border container-fluid w-100 "> <!-- pannel -->
     <div class="border w-25"> <!-- player -->
-        <div class="border row">
-            <a>titlebox</a>
+
+<?php
+    //$i is de player de
+// nummers zijn player nummers
+    for ($i = 0; $i <= 5; $i++){
+    echo '
+    <div class="border row">
+            <a id="Titlebox'. $i .'">Music player</a>
         </div>
-        <div class="border row"> <!-- volume slider -->
+        <div class="border row" > <!-- volume slider -->
             <a>volume slider</a>
         </div>
         <div class="border row"> <!-- play/pauze/loop/random -->
@@ -34,18 +42,23 @@
         </div>
         <div> <!-- music selection box -->
             <ul>
-                <button class="btn btn-secondary" onclick="Selector(1, 0), this">piano1.mp3</button>
-                <button class="btn btn-secondary" onclick="Selector(1, 1)">piano2.mp3</button>
-                <button class="btn btn-secondary" onclick="Selector(1, 2)">rhodes1.mp3</button>
-                <button class="btn btn-secondary" onclick="Selector(1, 3)">rhodes2.mp3</button>
-                <button class="btn btn-secondary" onclick="Selector(1, 4)">synth1.mp3</button>
-                <button class="btn btn-secondary" onclick="Selector(1, 5)">synth2.mp3</button>
-                <button class="btn btn-secondary" onclick="Selector(1, 6)">white_noise.mp3</button>
+                <button id="button'. $i .'0" class="btn btn-secondary" onclick="Selector('. $i .', 0)">piano1.mp3</button>
+                <button id="button'. $i .'1" class="btn btn-secondary" onclick="Selector('. $i .', 1)">piano2.mp3</button>
+                <button id="button'. $i .'2" class="btn btn-secondary" onclick="Selector('. $i .', 2)">rhodes1.mp3</button>
+                <button id="button'. $i .'3" class="btn btn-secondary" onclick="Selector('. $i .', 3)">rhodes2.mp3</button>
+                <button id="button'. $i .'4" class="btn btn-secondary" onclick="Selector('. $i .', 4)">synth1.mp3</button>
+                <button id="button'. $i .'5" class="btn btn-secondary" onclick="Selector('. $i .', 5)">synth2.mp3</button>
+                <button id="button'. $i .'6" class="btn btn-secondary" onclick="Selector('. $i .', 6)">white_noise.mp3</button>
             </ul>
         </div>
+    
+    ';
+    }
 
-        <script src="Main.js"></script>
+
+?>
     </div>
 </div>
 </body>
+
 </html>
