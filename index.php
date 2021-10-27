@@ -17,18 +17,22 @@
 <body>
 
 <div class="border container-fluid w-100 "> <!-- pannel -->
-    <div class="border w-25"> <!-- player -->
 
-<?php
+
+    <?php
+    $playercount = 4;
+
     //$i is de player de
-// nummers zijn player nummers
-    for ($i = 0; $i <= 5; $i++){
-    echo '
+    // nummers zijn player nummers
+    for ($i = 0; $i <= $playercount; $i++) {
+        echo '
+<div class="border w-25"> <!-- player -->
     <div class="border row">
-            <a id="Titlebox'. $i .'">Music player</a>
+            <a id="Titlebox' . $i . '">Music player</a>
         </div>
         <div class="border row" > <!-- volume slider -->
             <a>volume slider</a>
+            <input type="range" class="form-range m-2">
         </div>
         <div class="border row"> <!-- play/pauze/loop/random -->
             <button type="button" class="w-25 btn-secondary">play</button>
@@ -51,13 +55,12 @@
                 <button id="button'. $i .'6" class="btn btn-secondary" onclick="Selector('. $i .', 6)">white_noise.mp3</button>
             </ul>
         </div>
-    
+    </div>
     ';
     }
 
-
-?>
-    </div>
+    ?>
+ <button href="index.php<?php echo 'playercount=' + $playercount?>" class="btn btn-warning">kaas</button>
 </div>
 </body>
 

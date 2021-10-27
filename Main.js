@@ -8,12 +8,22 @@
     //change song title
     document.getElementById('Titlebox' + playerId).innerHTML = muziek[songId];
 
-    //cahnge button to green
-    document.getElementById('button' + playerId + songId).classList.remove('btn-secondary');
-    document.getElementById('button' + playerId + songId).classList.add('btn-success');
+    //change button to green
+        if(document.getElementById('button' + playerId + songId).classList.contains('btn-secondary')){
+            document.getElementById('button' + playerId + songId).classList.remove('btn-secondary');
+            document.getElementById('button' + playerId + songId).classList.add('btn-success');
+        }
+        else {
+            document.getElementById('button' + playerId + songId).classList.remove('btn-success');
+            document.getElementById('button' + playerId + songId).classList.add('btn-secondary');
+        }
 
-
-
-
-    console.log('button' + playerId + songId);
+        /*
+        var x = document.createElement("AUDIO");
+        if (x.canPlayType("audio/mp3")) {
+            x.setAttribute("src","audio/piano1.mp3");
+        }
+        x.setAttribute("controls", "controls");
+        document.body.appendChild(x);
+        */
     }
