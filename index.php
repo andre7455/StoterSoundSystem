@@ -20,7 +20,14 @@
 
 
     <?php
-    $playercount = 4;
+    $playercount = htmlspecialchars($_GET['player']);
+    if ($_GET['player'] == null){
+        $playercount = htmlspecialchars($_GET['player']);
+    }
+
+
+    //print $playercount + "is de playercount";
+
 
     //$i is de player de
     // nummers zijn player nummers
@@ -60,7 +67,7 @@
     }
 
     ?>
- <button href="index.php<?php echo 'playercount=' + $playercount?>" class="btn btn-warning">kaas</button>
+ <a href="index.php?player=<?php echo $playercount + 1 ?>" class="btn btn-warning">kaas</a>
 </div>
 </body>
 
