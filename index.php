@@ -28,7 +28,7 @@
 
     //print $playercount + "is de playercount";
 
-
+  //
     //$i is de player de
     // nummers zijn player nummers
     for ($i = 0; $i <= $playercount; $i++) {
