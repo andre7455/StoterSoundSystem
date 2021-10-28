@@ -31,9 +31,12 @@
   //
     //$i is de player de
     // nummers zijn player nummers
+
+    echo '<div class="container">
+          <div class="row">';
     for ($i = 0; $i <= $playercount; $i++) {
         echo '
-<div class="border w-25"> <!-- player -->
+<div class="border col-3 m-2"> <!-- player -->
     <div class="border row">
             <a id="Titlebox' . $i . '">Music player</a>
         </div>
@@ -65,9 +68,9 @@
     </div>
     ';
     }
-
+    echo '</div></div>';
     ?>
- <a href="index.php?player=<?php echo $playercount + 1 ?>" class="btn btn-warning">kaas</a>
+ <a href="index.php?player=<?php echo $playercount + 1 ?>" class="btn btn-warning fixed-top">add player</a>
 </div>
 </body>
 
