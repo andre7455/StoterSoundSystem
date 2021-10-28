@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<div class="border container-fluid w-100 "> <!-- pannel -->
+<div class="border w-100 mt-5"> <!-- pannel -->
 
 
     <?php
@@ -33,10 +33,10 @@
     // nummers zijn player nummers
 
     echo '<div class="container">
-          <div class="row">';
+          <div class="row";">';
     for ($i = 0; $i <= $playercount; $i++) {
         echo '
-<div class="border col-3 m-2"> <!-- player -->
+<div class="border col-3 m-1" style="margin-left: 0%"> <!-- player -->
     <div class="border row">
             <a id="Titlebox' . $i . '">Music player</a>
         </div>
