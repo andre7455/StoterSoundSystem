@@ -1,4 +1,4 @@
-//song selector and title changer
+//song will be loaded and title will be changed
 let muziekTitle = ['paino1', 'paino2', 'rhodes1', 'rhodes2', 'synth1', 'synth2', 'synth3', 'white_noise.mp3'];
 function Selector(playerId, songId) {
     console.log('button' + playerId + songId);
@@ -49,12 +49,23 @@ function Selector(playerId, songId) {
                 document.getElementById("player" + playerId).src = 'audio/synth3.mp3';
                 document.getElementById("player" + playerId).play();
                 break;
+
+            case 7:
+                document.getElementById("player" + playerId).src = 'audio/white_noise.mp3';
+                document.getElementById("player" + playerId).play();
         }
 
     } else {
         document.getElementById('button' + playerId + songId).classList.remove('btn-success');
         document.getElementById('button' + playerId + songId).classList.add('btn-secondary');
     }
+}
+
+function random(playerId){
+
+    //generate a random int and feed it in to the default selector
+    var random = Math.floor(Math.random() * 8);
+    Selector(playerId, random);
 }
 
 

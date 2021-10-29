@@ -1,20 +1,21 @@
-function playpauze(playerId, command){
+function effects(playerId, command){
     console.log("je zit in de playpauze file");
     switch (command){
         case 0:
             document.getElementById("player" + playerId).play();
-            console.log("je hebt op play gedrukt");
             break;
 
         case 1:
             document.getElementById("player" + playerId).pause();
-            console.log("je hebt op pauze gedrukt");
             break;
         case 2:
-
-            //check if this works
             document.getElementById("player" + playerId).loop = true;
-            console.log("je hebt op loop gedrukt");
+            break;
+        case 3:
+            console.log("je zit in pitch");
+            document.getElementById("player" + playerId).mozPreservesPitch = false;
+            document.getElementById("player" + playerId).playbackRate = playbackRate - 0.5;
+            document.getElementById("player" + playerId).play();
             break;
     }
 }
