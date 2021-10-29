@@ -1,3 +1,3 @@
-function fileList(){
+function fileList() {
     return list;
 }
