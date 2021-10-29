@@ -10,5 +10,11 @@ function playpauze(playerId, command){
             document.getElementById("player" + playerId).pause();
             console.log("je hebt op pauze gedrukt");
             break;
+        case 2:
+
+            //check if this works
+            document.getElementById("player" + playerId).loop = true;
+            console.log("je hebt op loop gedrukt");
+            break;
     }
 }

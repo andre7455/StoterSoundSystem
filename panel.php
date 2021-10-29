@@ -24,8 +24,8 @@ for ($i = 0; $i <= $playercount; $i++) {
         </div>
         <div class="border row"> <!-- play/pauze/loop/random -->
             <button onclick="playpauze(' . $i . ', 0)" type="button" class="w-25 btn-secondary">play</button>
-            <button onclick="playpauze(' . $i . ', 1)"type="button" class="w-25 btn-secondary">pauze</button>
-            <button type="button" class="w-25 btn-secondary">loop</button>
+            <button onclick="playpauze(' . $i . ', 1)" type="button" class="w-25 btn-secondary">pauze</button>
+            <button onclick="playpauze(' . $i . ', 2)" type="button" class="w-25 btn-secondary">loop</button>
             <button type="button" class="w-25 btn-secondary">random</button>
         </div>
         <div class="border row"> <!-- pitch progress -->
