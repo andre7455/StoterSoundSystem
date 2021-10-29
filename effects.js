@@ -1,11 +1,11 @@
 function effects(playerId, command){
-    console.log("je zit in de playpauze file");
     switch (command){
         case 0:
             document.getElementById("player" + playerId).play();
             break;
 
         case 1:
+            console.log(playerId + " got the command pauze");
             document.getElementById("player" + playerId).pause();
             break;
         case 2:

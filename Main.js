@@ -62,7 +62,6 @@ function Selector(playerId, songId) {
 }
 
 function random(playerId){
-
     //generate a random int and feed it in to the default selector
     var random = Math.floor(Math.random() * 8);
     Selector(playerId, random);
