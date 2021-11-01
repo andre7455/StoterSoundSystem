@@ -1,3 +1,0 @@
-function fileList() {
-    return list;
-}

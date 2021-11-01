@@ -1,69 +1,83 @@
 //song will be loaded and title will be changed
 let muziekTitle = ['paino1', 'paino2', 'rhodes1', 'rhodes2', 'synth1', 'synth2', 'synth3', 'white_noise.mp3'];
+//een array met de active nummers er in en active players
+let actieveMuziek = [];
 function Selector(playerId, songId) {
-    console.log('button' + playerId + songId);
+    //add song to array
 
-    //change song title
-    document.getElementById('Titlebox' + playerId).innerHTML = muziekTitle[songId];
-
-    //change button to green
-    if (document.getElementById('button' + playerId + songId).classList.contains('btn-secondary')) {
-        document.getElementById('button' + playerId + songId).classList.remove('btn-secondary');
-        document.getElementById('button' + playerId + songId).classList.add('btn-success');
-
-        //turn on the music
-        switch (songId) {
-            case 0:
-                console.log("je zit nu in de switch case" + playerId);
-                document.getElementById("player" + playerId).src = 'audio/piano1.mp3';
-                document.getElementById("player" + playerId).play();
-                break;
-
-            case 1:
-                console.log("je zit nu in de switch case" + playerId);
-                document.getElementById("player" + playerId).src = 'audio/piano2.mp3';
-                document.getElementById("player" + playerId).play();
-                break;
-            case 2:
-                console.log("je zit nu in de switch case" + playerId);
-                document.getElementById("player" + playerId).src = 'audio/rhodes1.mp3';
-                document.getElementById("player" + playerId).play();
-                break;
-            case 3:
-                console.log("je zit nu in de switch case" + playerId);
-                document.getElementById("player" + playerId).src = 'audio/rhodes2.mp3';
-                document.getElementById("player" + playerId).play();
-                break;
-            case 4:
-                console.log("je zit nu in de switch case" + playerId);
-                document.getElementById("player" + playerId).src = 'audio/synth1.mp3';
-                document.getElementById("player" + playerId).play();
-                break;
-            case 5:
-                console.log("je zit nu in de switch case" + playerId);
-                document.getElementById("player" + playerId).src = 'audio/synth2.mp3';
-                document.getElementById("player" + playerId).play();
-                break;
-            case 6:
-                console.log("je zit nu in de switch case" + playerId);
-                document.getElementById("player" + playerId).src = 'audio/synth3.mp3';
-                document.getElementById("player" + playerId).play();
-                break;
-
-            case 7:
-                document.getElementById("player" + playerId).src = 'audio/white_noise.mp3';
-                document.getElementById("player" + playerId).play();
-        }
-
+    if (actieveMuziek.includes(songId)) {
+        alert("dit nummer is al actief");
     } else {
-        document.getElementById('button' + playerId + songId).classList.remove('btn-success');
-        document.getElementById('button' + playerId + songId).classList.add('btn-secondary');
+        actieveMuziek.push(songId);
+
+        //change song title
+        document.getElementById('Titlebox' + playerId).innerHTML = muziekTitle[songId];
+        //change button to green
+        if (document.getElementById('button' + playerId + songId).classList.contains('btn-secondary')) {
+            document.getElementById('button' + playerId + songId).classList.remove('btn-secondary');
+            document.getElementById('button' + playerId + songId).classList.add('btn-success');
+
+            //turn on the music
+            switch (songId) {
+                case 0:
+                    document.getElementById("player" + playerId).src = 'audio/piano1.mp3';
+                    document.getElementById("player" + playerId).play();
+                    console.log("je bent nu uit de check else");
+                    break;
+                case 1:
+                    document.getElementById("player" + playerId).src = 'audio/piano2.mp3';
+                    document.getElementById("player" + playerId).play();
+                    break;
+                case 2:
+                    document.getElementById("player" + playerId).src = 'audio/rhodes1.mp3';
+                    document.getElementById("player" + playerId).play();
+                    break;
+
+                case 3:
+                    document.getElementById("player" + playerId).src = 'audio/rhodes2.mp3';
+                    document.getElementById("player" + playerId).play();
+                    break;
+
+                case 4:
+                    document.getElementById("player" + playerId).src = 'audio/synth1.mp3';
+                    document.getElementById("player" + playerId).play();
+                    break;
+
+                case 5:
+                    document.getElementById("player" + playerId).src = 'audio/synth2.mp3';
+                    document.getElementById("player" + playerId).play();
+                    break;
+
+                case 6:
+                    document.getElementById("player" + playerId).src = 'audio/synth3.mp3';
+                    document.getElementById("player" + playerId).play();
+                    break;
+
+                case 7:
+                    if (isActive(actievemuziek, songId)) {
+                        alert("dit nummer is al actief");
+                        break;
+                    } else {
+                        document.getElementById("player" + playerId).src = 'audio/white_noise.mp3';
+                        document.getElementById("player" + playerId).play();
+                        break;
+                    }
+            }
+
+        } else {
+            document.getElementById('button' + playerId + songId).classList.remove('btn-success');
+            document.getElementById('button' + playerId + songId).classList.add('btn-secondary');
+        }
     }
 }
-
 function random(playerId){
     //generate a random int and feed it in to the default selector
     var random = Math.floor(Math.random() * 8);
+    if (actieveMuziek.includes(random)) {
+        random = random(playerId);
+    }
+
+    //check if song is already active
     Selector(playerId, random);
 }
 

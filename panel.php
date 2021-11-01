@@ -2,10 +2,8 @@
 include 'head.php';
 
 
-
-$playercount = htmlspecialchars($_GET['player']);
-$countlplayer = intval($playercount);
-$countlplayer = $countlplayer + 1;
+//bug fix
+$playercount = (int) $_GET['player'];
 
 
 //print $playercount + "is de playercount";
@@ -53,14 +51,12 @@ for ($i = 0; $i <= $playercount; $i++) {
 echo '</div></div>
 
 <div class="fixed-top container">
-    <a class="btn btn-warning" href="panel.php?player='. $countlplayer.'">add player</a>
+    <a class="btn btn-warning" href="panel.php?player='. ($playercount + 1) .'">add player</a>
     <button class="btn btn-warning" onclick="globalPlay('. $i .' , 0)">play all</button>
     <button class="btn btn-warning" onclick="globalPlay('. $i .' , 1)">pauze all</button>
     <button class="btn btn-warning" onclick="globalPlay('. $i .' , 2)">loop all</button>
     <button class="btn btn-warning" onclick="globalPlay('. $i .' , 3)">random all</button>
 </div>
-
-
 ';
 ?>
 

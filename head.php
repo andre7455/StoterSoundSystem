@@ -14,6 +14,7 @@
     <script src='Main.js'></script>
     <script src='effects.js'></script>
     <script src="globalButtons.js"></script>
+    <script src="checkIfActive.js"></script>
     <title>Stoter Sound System</title>
 </head>
 <body>
