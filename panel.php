@@ -2,16 +2,14 @@
 include 'head.php';
 
 
-//bug fix
+//gets the player count from the url and applies it to the page
 $playercount = (int)$_GET['player'];
 
 
-//print $playercount + "is de playercount";
-
-//$i is de player de
-// nummers zijn player nummers
-
+//a appart line in html to make the grid posible
 echo '<div class="container"><div class="row">';
+
+//the full player in a loop so it can be used multiple times with dynamic id's
 for ($i = 0; $i <= $playercount; $i++) {
     echo '
 <div class="border col-3 m-1"> <!-- player -->
@@ -45,9 +43,8 @@ for ($i = 0; $i <= $playercount; $i++) {
     </div>
     ';
 }
-//$playercount = intval($playercount);
 
-
+//the global buttons that are displayed at the top of the page, with the last player number to tell how many players there are on the page
 echo '</div></div>
 
 <div class="fixed-top container">
@@ -57,9 +54,8 @@ echo '</div></div>
     <button class="btn btn-warning" onclick="globalPlay(' . $i . ' , 2)">loop all</button>
     <button class="btn btn-warning" onclick="globalPlay(' . $i . ' , 3)">random all</button>
 </div>
-';
-?>
-
 
 </body>
 </html>
+';
+?>

@@ -5,10 +5,11 @@ let actieveMuziek = [];
 
 function Selector(playerId, songId) {
     //add song to array
+    if (actieveMuziek.includes(songId)){
+        console.log("dit nummer is al actief");
+    }
 
-    if (actieveMuziek.includes(songId)) {
-
-    } else {
+    else {
         reverter(playerId);
 
         actieveMuziek.push(songId);
@@ -76,7 +77,7 @@ function randomsong(playerId) {
         randomsong(playerId);
     }
 
-    //check if song is already active
+    //pushes song for playing
     Selector(playerId, randomnumber);
 }
 

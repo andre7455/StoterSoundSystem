@@ -1,3 +1,5 @@
+
+//one function that determens the disired effect and than applies it to the apropriate player
 function effects(playerId, command) {
     switch (command) {
         case 0:
@@ -9,14 +11,10 @@ function effects(playerId, command) {
         case 2:
             document.getElementById("player" + playerId).loop = true;
             break;
-        case 3:
-            document.getElementById("player" + playerId).mozPreservesPitch = false;
-            document.getElementById("player" + playerId).playbackRate = playbackRate - 0.5;
-            document.getElementById("player" + playerId).play();
-            break;
     }
 }
 
+//this function reverts all the buttons to gray and removes the active songid from the array if there is any
 function reverter(playerId) {
     for (let i = 0; i < 8; i++) {
         if (document.getElementById('button' + playerId + i).classList.contains('btn-success')) {
