@@ -2,12 +2,15 @@
 let muziekTitle = ['paino1', 'paino2', 'rhodes1', 'rhodes2', 'synth1', 'synth2', 'synth3', 'white_noise.mp3'];
 //een array met de active nummers er in en active players
 let actieveMuziek = [];
+
 function Selector(playerId, songId) {
     //add song to array
 
     if (actieveMuziek.includes(songId)) {
-        alert("dit nummer is al actief");
+
     } else {
+        reverter(playerId);
+
         actieveMuziek.push(songId);
 
         //change song title
@@ -22,7 +25,6 @@ function Selector(playerId, songId) {
                 case 0:
                     document.getElementById("player" + playerId).src = 'audio/piano1.mp3';
                     document.getElementById("player" + playerId).play();
-                    console.log("je bent nu uit de check else");
                     break;
                 case 1:
                     document.getElementById("player" + playerId).src = 'audio/piano2.mp3';
@@ -54,14 +56,9 @@ function Selector(playerId, songId) {
                     break;
 
                 case 7:
-                    if (isActive(actievemuziek, songId)) {
-                        alert("dit nummer is al actief");
-                        break;
-                    } else {
-                        document.getElementById("player" + playerId).src = 'audio/white_noise.mp3';
-                        document.getElementById("player" + playerId).play();
-                        break;
-                    }
+                    document.getElementById("player" + playerId).src = 'audio/white_noise.mp3';
+                    document.getElementById("player" + playerId).play();
+                    break;
             }
 
         } else {
@@ -70,15 +67,17 @@ function Selector(playerId, songId) {
         }
     }
 }
-function random(playerId){
+
+function randomsong(playerId) {
+
     //generate a random int and feed it in to the default selector
-    var random = Math.floor(Math.random() * 8);
-    if (actieveMuziek.includes(random)) {
-        random = random(playerId);
+    var randomnumber = Math.floor(Math.random() * 8);
+    if (actieveMuziek.includes(randomnumber)) {
+        randomsong(playerId);
     }
 
     //check if song is already active
-    Selector(playerId, random);
+    Selector(playerId, randomnumber);
 }
 
 

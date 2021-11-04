@@ -1,9 +1,8 @@
-function isActive(array, id){
+function isActive(array, id) {
     var length = array.length;
-
-    for (var i = 0; i <= length; i++){
+    for (var i = 0; i <= length; i++) {
         console.log("je song array word gechecked");
-        if (array[i] == id){
+        if (array[i] == id) {
             return true;
         }
     }

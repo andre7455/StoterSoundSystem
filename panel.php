@@ -3,7 +3,7 @@ include 'head.php';
 
 
 //bug fix
-$playercount = (int) $_GET['player'];
+$playercount = (int)$_GET['player'];
 
 
 //print $playercount + "is de playercount";
@@ -16,7 +16,7 @@ for ($i = 0; $i <= $playercount; $i++) {
     echo '
 <div class="border col-3 m-1"> <!-- player -->
     <div class="border row">
-            <a id="Titlebox'. $i .'">Music player</a>
+            <a id="Titlebox' . $i . '">Music player</a>
         </div>
         <div class="border row" > <!-- volume slider -->
             <a>volume slider</a>
@@ -26,7 +26,7 @@ for ($i = 0; $i <= $playercount; $i++) {
             <button onclick="effects(' . $i . ', 0)" type="button" class="w-25 btn-secondary">play</button>
             <button onclick="effects(' . $i . ', 1)" type="button" class="w-25 btn-secondary">pauze</button>
             <button onclick="effects(' . $i . ', 2)" type="button" class="w-25 btn-secondary">loop</button>
-            <button onclick="random('.$i .')" type="button" class="w-25 btn-secondary">random</button>
+            <button onclick="random(' . $i . ')" type="button" class="w-25 btn-secondary">random</button>
         </div>
         <div> <!-- music selection box -->
             <ul>
@@ -51,11 +51,11 @@ for ($i = 0; $i <= $playercount; $i++) {
 echo '</div></div>
 
 <div class="fixed-top container">
-    <a class="btn btn-warning" href="panel.php?player='. ($playercount + 1) .'">add player</a>
-    <button class="btn btn-warning" onclick="globalPlay('. $i .' , 0)">play all</button>
-    <button class="btn btn-warning" onclick="globalPlay('. $i .' , 1)">pauze all</button>
-    <button class="btn btn-warning" onclick="globalPlay('. $i .' , 2)">loop all</button>
-    <button class="btn btn-warning" onclick="globalPlay('. $i .' , 3)">random all</button>
+    <a class="btn btn-warning" href="panel.php?player=' . ($playercount + 1) . '">add player</a>
+    <button class="btn btn-warning" onclick="globalPlay(' . $i . ' , 0)">play all</button>
+    <button class="btn btn-warning" onclick="globalPlay(' . $i . ' , 1)">pauze all</button>
+    <button class="btn btn-warning" onclick="globalPlay(' . $i . ' , 2)">loop all</button>
+    <button class="btn btn-warning" onclick="globalPlay(' . $i . ' , 3)">random all</button>
 </div>
 ';
 ?>
