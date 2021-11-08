@@ -24,7 +24,7 @@ for ($i = 0; $i <= $playercount; $i++) {
             <button onclick="effects(' . $i . ', 0)" type="button" class="w-25 btn-secondary">play</button>
             <button onclick="effects(' . $i . ', 1)" type="button" class="w-25 btn-secondary">pauze</button>
             <button onclick="effects(' . $i . ', 2)" type="button" class="w-25 btn-secondary">loop</button>
-            <button onclick="random(' . $i . ')" type="button" class="w-25 btn-secondary">random</button>
+            <button onclick="randomsong(' . $i . ')" type="button" class="w-25 btn-secondary">random</button>
         </div>
         <div> <!-- music selection box -->
             <ul>
