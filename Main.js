@@ -11,7 +11,6 @@ function Selector(playerId, songId) {
 
     else {
         reverter(playerId);
-
         actieveMuziek.push(songId);
 
         //change song title
@@ -61,7 +60,6 @@ function Selector(playerId, songId) {
                     document.getElementById("player" + playerId).play();
                     break;
             }
-
         } else {
             document.getElementById('button' + playerId + songId).classList.remove('btn-success');
             document.getElementById('button' + playerId + songId).classList.add('btn-secondary');
@@ -70,7 +68,6 @@ function Selector(playerId, songId) {
 }
 
 function randomsong(playerId) {
-
     //generate a random int and feed it in to the default selector
     var randomnumber = Math.floor(Math.random() * 8);
     if (actieveMuziek.includes(randomnumber)) {

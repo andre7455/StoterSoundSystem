@@ -46,9 +46,9 @@ for ($i = 0; $i <= $playercount; $i++) {
 
 //the global buttons that are displayed at the top of the page, with the last player number to tell how many players there are on the page
 echo '</div></div>
-
 <div class="fixed-top container">
-    <a class="btn btn-warning" href="panel.php?player=' . ($playercount + 1) . '">add player</a>
+    <a class="btn btn-warning" href="panel.php?player=' . ($playercount + 1) .'">add player</a>
+    <a class="btn btn-warning" href="panel.php?player='. ($playercount - 1) .'">remove player</a>
     <button class="btn btn-warning" onclick="globalPlay(' . $i . ' , 0)">play all</button>
     <button class="btn btn-warning" onclick="globalPlay(' . $i . ' , 1)">pauze all</button>
     <button class="btn btn-warning" onclick="globalPlay(' . $i . ' , 2)">loop all</button>
