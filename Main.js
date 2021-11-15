@@ -64,12 +64,11 @@ function Selector(playerId, songId) {
 }
 
 function randomsong(playerId) {
-    //generate a random int and feed it in to the default selector
-    var randomnumber = Math.floor(Math.random() * 8);
-    if (actieveMuziek.includes(randomnumber)) {
-        randomsong(playerId);
-    }
-
+    //generate a random int that does not exist in the actievemuziek array and feed it in to the default selector
+    do {
+        var randomnumber = Math.floor(Math.random() * 8);
+    } while (actieveMuziek.includes(randomnumber))
+    console.log(randomnumber);
     //pushes song for playing
     Selector(playerId, randomnumber);
 }
