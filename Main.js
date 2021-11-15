@@ -6,10 +6,11 @@ let actieveMuziek = [];
 function Selector(playerId, songId) {
     //add song to array
     if (actieveMuziek.includes(songId)){
-        console.log("dit nummer is al actief");
+        console.log("dit nummer is al actief" + playerId);
     }
 
     else {
+        console.log( + "");
         reverter(playerId);
         actieveMuziek.push(songId);
 
@@ -73,6 +74,7 @@ function randomsong(playerId) {
     if (actieveMuziek.includes(randomnumber)) {
         randomsong(playerId);
     }
+
     //pushes song for playing
     Selector(playerId, randomnumber);
 }
