@@ -16,10 +16,6 @@ for ($i = 0; $i <= $playercount; $i++) {
     <div class="border row">
             <a id="Titlebox' . $i . '">Music player</a>
         </div>
-        <div class="border row" > <!-- volume slider -->
-            <a>volume slider</a>
-            <input type="range" class="form-range m-2">
-        </div>
         <div class="border row"> <!-- play/pauze/loop/random -->
             <button onclick="effects(' . $i . ', 0)" type="button" class="w-25 btn-secondary">play</button>
             <button onclick="effects(' . $i . ', 1)" type="button" class="w-25 btn-secondary">pauze</button>
